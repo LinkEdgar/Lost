@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@android:color/white"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:background="@color/colorPrimaryDark"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/constraintLayout">
 
     <View
-          android:background="@color/colorPrimary"
-          android:layout_width="match_parent"
-          android:layout_height="@dimen/divider_height"
-          tools:layout_editor_absoluteX="0dp"
-          app:layout_constraintTop_toTopOf="parent"
-          android:id="@+id/view"/>
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            tools:layout_editor_absoluteX="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/view"/>
 
     <androidx.cardview.widget.CardView
             android:layout_margin="@dimen/vertical_margin"
@@ -32,23 +33,35 @@
             <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/layout_username"
                     android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/icon_size"
                     android:layout_height="wrap_content"
                     tools:layout_editor_absoluteX="0dp"
                     android:layout_marginTop="@dimen/vertical_margin_large"
+                    app:layout_constraintLeft_toRightOf="@+id/user_name_icon"
                     app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                         android:textSize="@dimen/hint_text_size"
                         android:hint="@string/login_username_hint"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textInputEditText"/>
             </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                    android:id="@+id/user_name_icon"
+                    android:src="@mipmap/ic_launcher_round"
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/layout_username"/>
 
             <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/layout_hint"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:layout_editor_absoluteX="0dp"
+                    android:layout_marginLeft="@dimen/icon_size"
                     android:layout_marginTop="@dimen/vertical_margin_large"
                     app:layout_constraintTop_toBottomOf="@id/layout_username">
 
@@ -59,7 +72,16 @@
                         android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
 
+            <ImageView
+                    android:src="@mipmap/ic_launcher_round"
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    app:layout_constraintBottom_toBottomOf="@+id/layout_hint"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
             <Button
+                    android:layout_marginTop="@dimen/vertical_margin_large"
                     android:id="@+id/sign_in_bt"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/button_text_size"
@@ -69,9 +91,11 @@
                     android:layout_height="40dp"
                     tools:layout_editor_absoluteX="0dp"
                     android:layout_marginBottom="@dimen/vertical_margin"
-                    app:layout_constraintBottom_toTopOf="@+id/create_account_bt"/>
+                    app:layout_constraintBottom_toTopOf="@+id/create_account_bt"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_hint"/>
 
             <Button
+                    android:layout_marginTop="@dimen/vertical_margin_large"
                     android:id="@+id/create_account_bt"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/button_text_size"
@@ -80,9 +104,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     tools:layout_editor_absoluteX="0dp"
-                    android:layout_marginBottom="@dimen/vertical_margin_large"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
-            
+                    app:layout_constraintTop_toBottomOf="@+id/sign_in_bt"
+                    tools:layout_editor_absoluteY="296dp"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
