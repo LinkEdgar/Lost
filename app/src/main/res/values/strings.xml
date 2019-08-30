@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lost</string>
+
+    <string name="login_username_hint">Username</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_sign_in_bt">Sign In</string>
+    <string name="login_create_account_bt"> Create Account</string>
+</resources>

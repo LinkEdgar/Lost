@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="horizontal_margin">16dp</dimen>
+    <dimen name="vertical_margin">16dp</dimen>
+    <dimen name="vertical_margin_large">32dp</dimen>
+    <dimen name="horizontal_margin_large">32dp</dimen>
+    <dimen name="button_text_size">18sp</dimen>
+
+    <dimen name="hint_text_size">16sp</dimen>
+    <!-- Login Fragment-->
+    <dimen name="divider_height">200dp</dimen>
+    <dimen name="login_card">450dp</dimen>
+
+</resources>
