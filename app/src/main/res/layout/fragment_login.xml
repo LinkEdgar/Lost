@@ -3,7 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/gradient_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/constraintLayout">
@@ -17,6 +17,7 @@
             android:id="@+id/view"/>
 
     <androidx.cardview.widget.CardView
+            android:elevation="6dp"
             android:layout_margin="@dimen/vertical_margin"
             android:layout_width="match_parent"
             android:layout_height="@dimen/login_card"
@@ -50,11 +51,12 @@
 
             <ImageView
                     android:id="@+id/user_name_icon"
-                    android:src="@mipmap/ic_launcher_round"
+                    android:src="@mipmap/ic_user"
                     android:layout_width="@dimen/icon_size"
                     android:layout_height="@dimen/icon_size"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@+id/layout_username"/>
+                    app:layout_constraintBottom_toBottomOf="@+id/layout_username"
+                    android:layout_marginBottom="8dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/layout_hint"
@@ -73,12 +75,12 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <ImageView
-                    android:src="@mipmap/ic_launcher_round"
+                    android:src="@mipmap/ic_password"
                     android:layout_width="@dimen/icon_size"
                     android:layout_height="@dimen/icon_size"
-                    app:layout_constraintBottom_toBottomOf="@+id/layout_hint"
                     app:layout_constraintStart_toStartOf="parent"
-                    />
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/layout_hint"/>
 
             <Button
                     android:layout_marginTop="@dimen/vertical_margin_large"
