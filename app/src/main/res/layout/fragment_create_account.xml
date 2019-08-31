@@ -97,16 +97,17 @@
             -->
 
             <Button
+                    android:layout_marginLeft="@dimen/horizontal_margin"
+                    android:layout_marginRight="@dimen/horizontal_margin"
                     android:text="@string/create_account_button"
                     android:textSize="@dimen/button_text_size"
                     android:textColor="@android:color/white"
-                    android:layout_margin="@dimen/vertical_margin"
                     android:background="@drawable/button_background"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/card_button_height"
                     tools:layout_editor_absoluteX="16dp"
                     android:id="@+id/button"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="@dimen/vertical_margin_large"
                     app:layout_constraintBottom_toTopOf="@+id/textView"/>
 
             <TextView
