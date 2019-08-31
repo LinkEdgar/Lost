@@ -27,6 +27,7 @@ class LoginFragment : Fragment(){
 
     private fun setUi(){
         binding.createAccountBt.setOnClickListener { viewModel.switchToCreateAccount(view!!)}
+        binding.signInBt.setOnClickListener{ viewModel.switchActivities(context!!)}
     }
 
 }

@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.findNavController
 import com.example.lost.Activities.LoginActivity
+import com.example.lost.Activities.MainActivity
 import com.example.lost.R
 
 class LoginFragmentViewModel : ViewModel(){
@@ -25,7 +26,7 @@ class LoginFragmentViewModel : ViewModel(){
     fun switchActivities(context: Context){
 
         //todo switch the destination
-        val intent = Intent(context, LoginActivity::class.java)
+        val intent = Intent(context, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         context.startActivity(intent)
     }
