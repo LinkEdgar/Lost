@@ -1,8 +1,17 @@
 <resources>
     <string name="app_name">Lost</string>
 
+    <!-- Login Fragment-->
     <string name="login_username_hint">Username</string>
     <string name="login_password_hint">Password</string>
     <string name="login_sign_in_bt">Sign In</string>
     <string name="login_create_account_bt"> Create Account</string>
+
+    <!-- Create account  -->
+
+    <string name="create_account_button">Register</string>
+    <string name="create_account_name_hint"> Name</string>
+    <string name="password_confirmation_hint">Confirm password</string>
+    <string name="email_hint">Email</string>
+    <string name="switch_to_login_text">Already have an account?</string>
 </resources>

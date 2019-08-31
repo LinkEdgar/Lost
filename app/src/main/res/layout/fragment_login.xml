@@ -1,115 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:background="@color/colorPrimary"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/constraintLayout">
+        xmlns:tools="http://schemas.android.com/tools">
 
-    <View
-            android:background="@drawable/gradient_background"
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@color/colorPrimary"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/divider_height"
-            tools:layout_editor_absoluteX="0dp"
-            app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/view"/>
+            android:layout_height="match_parent"
+            android:id="@+id/constraintLayout">
 
-    <androidx.cardview.widget.CardView
-            android:elevation="6dp"
-            android:layout_margin="@dimen/vertical_margin"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/login_card"
-            tools:layout_editor_absoluteX="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/view">
+        <View
+                android:background="@drawable/gradient_background"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                tools:layout_editor_absoluteX="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/view"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.cardview.widget.CardView
+                android:elevation="6dp"
                 android:layout_margin="@dimen/vertical_margin"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="@dimen/login_card"
+                tools:layout_editor_absoluteX="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/view">
 
-            <!-- TODO change color of input fields -->
-
-            <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/layout_username"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_margin="@dimen/vertical_margin"
                     android:layout_width="match_parent"
-                    android:layout_marginLeft="@dimen/icon_size"
-                    android:layout_height="wrap_content"
-                    tools:layout_editor_absoluteX="0dp"
-                    android:layout_marginTop="@dimen/vertical_margin_large"
-                    app:layout_constraintLeft_toRightOf="@+id/user_name_icon"
-                    app:layout_constraintTop_toTopOf="parent">
+                    android:layout_height="match_parent">
 
-                <com.google.android.material.textfield.TextInputEditText
-                        android:textSize="@dimen/hint_text_size"
-                        android:hint="@string/login_username_hint"
+                <!-- TODO change color of input fields -->
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_username"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="@dimen/icon_size"
+                        android:layout_height="wrap_content"
+                        tools:layout_editor_absoluteX="0dp"
+                        android:layout_marginTop="@dimen/vertical_margin_large"
+                        app:layout_constraintLeft_toRightOf="@+id/user_name_icon"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:singleLine="true"
+                            android:textSize="@dimen/hint_text_size"
+                            android:hint="@string/login_username_hint"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textInputEditText"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                        android:id="@+id/user_name_icon"
+                        android:src="@mipmap/ic_user"
+                        android:layout_width="@dimen/icon_size"
+                        android:layout_height="@dimen/icon_size"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@+id/layout_username"
+                        android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_hint"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textInputEditText"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                        tools:layout_editor_absoluteX="0dp"
+                        android:layout_marginLeft="@dimen/icon_size"
+                        android:layout_marginTop="@dimen/vertical_margin_large"
+                        app:layout_constraintTop_toBottomOf="@id/layout_username">
 
-            <ImageView
-                    android:id="@+id/user_name_icon"
-                    android:src="@mipmap/ic_user"
-                    android:layout_width="@dimen/icon_size"
-                    android:layout_height="@dimen/icon_size"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@+id/layout_username"
-                    android:layout_marginBottom="8dp"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:singleLine="true"
+                            android:textSize="@dimen/hint_text_size"
+                            android:hint="@string/login_password_hint"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/layout_hint"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:layout_editor_absoluteX="0dp"
-                    android:layout_marginLeft="@dimen/icon_size"
-                    android:layout_marginTop="@dimen/vertical_margin_large"
-                    app:layout_constraintTop_toBottomOf="@id/layout_username">
+                <ImageView
+                        android:src="@mipmap/ic_password"
+                        android:layout_width="@dimen/icon_size"
+                        android:layout_height="@dimen/icon_size"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/layout_hint"/>
 
-                <com.google.android.material.textfield.TextInputEditText
-                        android:textSize="@dimen/hint_text_size"
-                        android:hint="@string/login_password_hint"
+                <Button
+                        android:layout_marginTop="@dimen/vertical_margin_large"
+                        android:id="@+id/sign_in_bt"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/button_text_size"
+                        android:text="@string/login_sign_in_bt"
+                        android:background="@drawable/button_background"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                        android:layout_height="@dimen/card_button_height"
+                        tools:layout_editor_absoluteX="0dp"
+                        android:layout_marginBottom="@dimen/vertical_margin"
+                        app:layout_constraintBottom_toTopOf="@+id/create_account_bt"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_hint"/>
 
-            <ImageView
-                    android:src="@mipmap/ic_password"
-                    android:layout_width="@dimen/icon_size"
-                    android:layout_height="@dimen/icon_size"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/layout_hint"/>
+                <Button
+                        android:layout_marginTop="@dimen/vertical_margin_large"
+                        android:id="@+id/create_account_bt"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/button_text_size"
+                        android:text="@string/login_create_account_bt"
+                        android:background="@drawable/button_background"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/card_button_height"
+                        tools:layout_editor_absoluteX="0dp"
+                        app:layout_constraintTop_toBottomOf="@+id/sign_in_bt"
+                        tools:layout_editor_absoluteY="296dp"/>
 
-            <Button
-                    android:layout_marginTop="@dimen/vertical_margin_large"
-                    android:id="@+id/sign_in_bt"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/button_text_size"
-                    android:text="@string/login_sign_in_bt"
-                    android:background="@drawable/button_background"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    tools:layout_editor_absoluteX="0dp"
-                    android:layout_marginBottom="@dimen/vertical_margin"
-                    app:layout_constraintBottom_toTopOf="@+id/create_account_bt"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_hint"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
-            <Button
-                    android:layout_marginTop="@dimen/vertical_margin_large"
-                    android:id="@+id/create_account_bt"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/button_text_size"
-                    android:text="@string/login_create_account_bt"
-                    android:background="@drawable/button_background"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    tools:layout_editor_absoluteX="0dp"
-                    app:layout_constraintTop_toBottomOf="@+id/sign_in_bt"
-                    tools:layout_editor_absoluteY="296dp"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -8,9 +8,14 @@
     <dimen name="button_text_size">18sp</dimen>
     <dimen name="icon_size">32dp</dimen>
 
+    <dimen name="card_button_height">40dp</dimen>
+
     <dimen name="hint_text_size">16sp</dimen>
     <!-- Login Fragment-->
     <dimen name="divider_height">200dp</dimen>
     <dimen name="login_card">400dp</dimen>
+
+    <!-- CreateAccount Fragment -->
+    <dimen name="create_account_card">500dp</dimen>
 
 </resources>
