@@ -6,7 +6,6 @@ import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.findNavController
-import com.example.lost.Activities.LoginActivity
 import com.example.lost.Activities.MainActivity
 import com.example.lost.R
 

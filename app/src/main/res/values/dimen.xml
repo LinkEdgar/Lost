@@ -19,4 +19,9 @@
     <!-- CreateAccount Fragment -->
     <dimen name="create_account_card">500dp</dimen>
 
+    <!-- -->
+    <dimen name="tab_divider">100dp</dimen>
+    <dimen name="adopt_card">400dp</dimen>
+    <dimen name="adopt_card_image">200dp</dimen>
+
 </resources>
