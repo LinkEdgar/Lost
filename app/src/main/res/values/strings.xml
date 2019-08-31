@@ -6,6 +6,7 @@
     <string name="login_password_hint">Password</string>
     <string name="login_sign_in_bt">Sign In</string>
     <string name="login_create_account_bt"> Create Account</string>
+    <string name="forgot_password_text">Forgot your password?</string>
 
     <!-- Create account  -->
 
