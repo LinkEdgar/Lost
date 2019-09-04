@@ -19,12 +19,12 @@
                 android:id="@+id/petImage"
                 tools:layout_editor_absoluteX="16dp"/>
 
-
         <!-- TODO rename views. Add text to string resources-->
+
         <TextView
                 android:textSize="@dimen/button_text_size"
                 android:layout_margin="@dimen/vertical_margin"
-                android:text="Pets like this need a good home. Find out how to adopt from your local animal shelter by clicking the button below."
+                android:text="Have you seen me? Contact my owner so I can return home."
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/petImage"
@@ -42,7 +42,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/button_border"
-                android:text="More Info"
+                android:text="Contact"
                 android:textColor="@color/colorLight"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

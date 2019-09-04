@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +7,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
     <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
             android:layout_marginTop="@dimen/vertical_margin"
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
@@ -16,4 +21,21 @@
             app:layout_constraintTop_toTopOf="parent"
             />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <include
+            android:id="@+id/adopt_card"
+            layout="@layout/adopt_card"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+        />
+
+        <include
+                android:id="@+id/lost_card"
+                layout="@layout/lost_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/adopt_card"
+                tools:layout_editor_absoluteX="1dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
