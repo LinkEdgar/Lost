@@ -19,6 +19,10 @@
     <!-- CreateAccount Fragment -->
     <dimen name="create_account_card">500dp</dimen>
 
+    <!-- Pet search card-->
+    <dimen name="pet_search_card_width">150dp</dimen>
+    <dimen name="pet_search_card_height">140dp</dimen>
+
     <!-- -->
     <dimen name="tab_divider">80dp</dimen>
     <dimen name="adopt_card">400dp</dimen>
