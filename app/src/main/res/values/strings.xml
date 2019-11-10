@@ -22,5 +22,11 @@
     <string name="report_found_label">Found</string>
     <string name="report_next_button">Next</string>
 
+    <string name="report_form_name">Name</string>
+    <string name="report_form_weight">Weight</string>
+    <string name="report_form_zip">Zip Code</string>
+    <string name="report_form_description">Description</string>
+
+
 
 </resources>

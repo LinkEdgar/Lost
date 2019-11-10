@@ -19,5 +19,13 @@
     <fragment
             android:id="@+id/reportPromptFragment"
             android:name="com.example.lost.Fragments.ReportPromptFragment"
-            android:label="ReportPromptFragment" />
+            android:label="ReportPromptFragment" >
+        <action
+                android:id="@+id/action_reportPromptFragment_to_petFormFragment"
+                app:destination="@id/petFormFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/petFormFragment"
+            android:name="com.example.lost.Fragments.PetFormFragment"
+            android:label="PetFormFragment" />
 </navigation>

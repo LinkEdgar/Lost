@@ -26,7 +26,7 @@
     <dimen name="pet_search_card_height">140dp</dimen>
 
     <!-- -->
-    <dimen name="tab_divider">80dp</dimen>
+    <dimen name="tab_divider">60dp</dimen>
     <dimen name="adopt_card">400dp</dimen>
     <dimen name="adopt_card_image">200dp</dimen>
 
