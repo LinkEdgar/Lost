@@ -2,12 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
+    <!-- TODO replace icons -->
     <!-- TODO Add fragment and have same name schemes -->
 
     <item
             android:icon="@mipmap/ic_search"
             android:title="Report"
-        />
+            />
 
     <!-- TODO Add fragment and have same name schemes -->
     <item
