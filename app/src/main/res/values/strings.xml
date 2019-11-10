@@ -15,4 +15,12 @@
     <string name="password_confirmation_hint">Confirm password</string>
     <string name="email_hint">Email</string>
     <string name="switch_to_login_text">Already have an account?</string>
+
+    <!-- Report -->
+    <string name="report_prompt_header">Report a missing pet you\'ve found or lost</string>
+    <string name="report_lost_label">Lost</string>
+    <string name="report_found_label">Found</string>
+    <string name="report_next_button">Next</string>
+
+
 </resources>

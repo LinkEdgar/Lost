@@ -18,7 +18,7 @@ class SearchAdapter(var context: Context, var data: ArrayList<String>? = ArrayLi
     }
 
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
-        //TODO bind and start any logic based operators 
+        //TODO bind and start any logic based operators
     }
 
 

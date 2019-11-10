@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/header_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/vertical_margin_large"
+            android:text="@string/report_prompt_header"
+            android:textSize="@dimen/header_text"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp" />
+
+    <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="76dp"
+            android:background="@color/dividerColor"
+            app:layout_constraintTop_toBottomOf="@+id/header_text"
+            tools:layout_editor_absoluteX="0dp" />
+
+    <RadioButton
+            android:id="@+id/lost_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="84dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+            android:layout_margin="@dimen/vertical_margin"
+            android:id="@+id/lost_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/report_lost_label"
+            android:textSize="@dimen/button_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/lost_rb"
+            app:layout_constraintStart_toEndOf="@+id/lost_rb"
+            app:layout_constraintTop_toBottomOf="@+id/lost_rb" />
+
+    <RadioButton
+            android:id="@+id/found_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@+id/lost_rb"
+            app:layout_constraintTop_toBottomOf="@+id/lost_rb" />
+
+    <TextView
+            android:layout_margin="@dimen/vertical_margin"
+            android:id="@+id/found_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/report_found_label"
+            android:textSize="@dimen/button_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/found_rb"
+            app:layout_constraintStart_toEndOf="@+id/found_rb"
+            app:layout_constraintTop_toBottomOf="@+id/found_rb" />
+
+    <Button
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_background"
+            android:id="@+id/next_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="@string/report_next_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/found_rb"
+            app:layout_constraintVertical_bias="0.286" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@
     <!-- TODO Add fragment and have same name schemes -->
 
     <item
+            android:id="@+id/reportPromptFragment"
             android:icon="@mipmap/ic_search"
             android:title="Report"
             />

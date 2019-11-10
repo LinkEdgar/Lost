@@ -9,6 +9,8 @@
     <dimen name="highlighted_text_size">14sp</dimen>
     <dimen name="icon_size">32dp</dimen>
 
+    <dimen name="header_text">24sp</dimen>
+
     <dimen name="card_button_height">40dp</dimen>
 
     <dimen name="hint_text_size">16sp</dimen>

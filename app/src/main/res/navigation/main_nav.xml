@@ -16,4 +16,8 @@
             android:id="@+id/petSearchFragment"
             android:name="com.example.lost.Fragments.PetSearchFragment"
             android:label="PetSearchFragment" />
+    <fragment
+            android:id="@+id/reportPromptFragment"
+            android:name="com.example.lost.Fragments.ReportPromptFragment"
+            android:label="ReportPromptFragment" />
 </navigation>
