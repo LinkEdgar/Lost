@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.lost.R
-import com.example.lost.ViewModels.LoginFragmentViewModel
+import com.example.lost.viewModels.LoginFragmentViewModel
 import com.example.lost.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment(){

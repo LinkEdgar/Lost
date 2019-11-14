@@ -1,4 +1,4 @@
-package com.example.lost.ViewModels
+package com.example.lost.viewModels
 
 import android.content.Context
 import android.content.Intent
