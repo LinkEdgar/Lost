@@ -36,11 +36,24 @@ class CreateAccountFragment : Fragment(){
             binding.emailEt.text.toString(),
             binding.passwordEt.text.toString(),
             binding.confirmPassEt.text.toString())
+
         viewModel.onRegisterClicked(registration).observe(viewLifecycleOwner, Observer { isValid ->
             if(isValid){
+                registerUser(registration)
                 Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
             }else{
                 Toast.makeText(context, "Failure", Toast.LENGTH_SHORT).show()
+                //todo show error
+            }
+        })
+    }
+
+    private fun registerUser(registration: Registration){
+        viewModel.registerUser(auth, registration, activity!! ).observe(viewLifecycleOwner, Observer { isSuccessful ->
+            if (isSuccessful){
+                viewModel.switchToLogin(view!!)
+            } else {
+                //todo show error
             }
         })
     }
