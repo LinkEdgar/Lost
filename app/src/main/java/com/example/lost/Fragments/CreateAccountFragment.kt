@@ -16,6 +16,9 @@ import com.google.firebase.auth.FirebaseAuth
 
 class CreateAccountFragment : Fragment(){
 
+
+    //TODO add progress bar
+
     private lateinit var auth: FirebaseAuth
     private lateinit var viewModel: CreateAccountViewModel
     private lateinit var binding: FragmentCreateAccountBinding
