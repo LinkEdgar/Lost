@@ -10,14 +10,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.lost.R
 import com.example.lost.Registration
+import com.example.lost.Resource
 import com.example.lost.viewModels.CreateAccountViewModel
 import com.example.lost.databinding.FragmentCreateAccountBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class CreateAccountFragment : Fragment(){
-
-
-    //TODO add progress bar
 
     private lateinit var auth: FirebaseAuth
     private lateinit var viewModel: CreateAccountViewModel
@@ -43,29 +41,28 @@ class CreateAccountFragment : Fragment(){
         viewModel.onRegisterClicked(registration).observe(viewLifecycleOwner, Observer { isValid ->
             if(isValid){
                 registerUser(registration)
-                Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
             }else{
-                Toast.makeText(context, "Failure", Toast.LENGTH_SHORT).show()
-                //todo show error
+                Toast.makeText(context, "Please enter valid credentials", Toast.LENGTH_SHORT).show()
             }
         })
     }
 
     private fun registerUser(registration: Registration){
-        viewModel.registerUser(auth, registration, activity!! ).observe(viewLifecycleOwner, Observer { isSuccessful ->
-            if (isSuccessful){
-                viewModel.switchToLogin(view!!)
-            } else {
-                //todo show error
+        viewModel.registerUser(auth, registration, activity!! ).observe(viewLifecycleOwner, Observer { response ->
+
+            when(response.status){
+                Resource.Status.ERROR -> {
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(context!!, "Failed to create account. Please try again", Toast.LENGTH_LONG).show()
+                }
+                Resource.Status.LOADING -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+                Resource.Status.SUCCESS -> {
+                    binding.progressBar.visibility = View.GONE
+                    viewModel.switchToLogin(view!!)
+                }
             }
         })
-    }
-
-    override fun onStart() {
-        super.onStart()
-
-        //TODO --> maybe move this to loginfragment
-        val currentUser = auth.currentUser
-        viewModel.checkIfUserIsLoggedIn(currentUser, context!!)
     }
 }

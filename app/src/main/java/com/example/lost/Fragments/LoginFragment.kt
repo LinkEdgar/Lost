@@ -54,7 +54,7 @@ class LoginFragment : Fragment(){
             when(response.status){
                 Resource.Status.ERROR -> {
                     binding.progressBar.visibility = View.GONE
-                    Toast.makeText(context!!, "Error", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context!!, "An error occured. Please try again", Toast.LENGTH_LONG).show()
                 }
                 Resource.Status.LOADING -> {
                     binding.progressBar.visibility = View.VISIBLE
@@ -69,8 +69,7 @@ class LoginFragment : Fragment(){
 
     override fun onStart() {
         super.onStart()
-        if(auth.currentUser != null){
-            viewModel.switchToHome(context!!)
-        }
+        val currentUser = auth.currentUser
+        viewModel.checkIfUserIsLoggedIn(currentUser, context!!)
     }
 }

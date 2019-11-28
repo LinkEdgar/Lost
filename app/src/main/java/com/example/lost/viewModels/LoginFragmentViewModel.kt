@@ -52,6 +52,12 @@ class LoginFragmentViewModel : ViewModel(){
         view.findNavController().navigate(R.id.action_loginFragment_to_createAccountFragment)
     }
 
+    fun checkIfUserIsLoggedIn(currentUser: FirebaseUser?, context: Context){
+        if(currentUser != null){
+            switchToHome(context)
+        }
+    }
+
     fun signIn(auth : FirebaseAuth, activity: Activity): MutableLiveData<Resource<FirebaseUser>>{
         signIn = MutableLiveData()
         signIn.value = Resource(Status.LOADING)
