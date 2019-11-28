@@ -10,6 +10,8 @@ import androidx.lifecycle.ViewModel
 import androidx.navigation.findNavController
 import com.example.lost.Activities.MainActivity
 import com.example.lost.R
+import com.example.lost.Resource
+import com.example.lost.Resource.Status
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
@@ -17,7 +19,10 @@ class LoginFragmentViewModel : ViewModel(){
 
     private var isValidCredentials: MutableLiveData<Boolean> = MutableLiveData()
 
-    private var signIn: MutableLiveData<FirebaseUser> = MutableLiveData()
+    private var signIn: MutableLiveData<Resource<FirebaseUser>> = MutableLiveData()
+
+    private var username: String = ""
+    private var password: String = ""
 
     fun validateCredentials(username: String, password: String):Boolean{
         if(username.isEmpty()){
@@ -30,6 +35,9 @@ class LoginFragmentViewModel : ViewModel(){
     }
 
     fun onLoginClicked(username: String, password: String): MutableLiveData<Boolean>{
+        isValidCredentials = MutableLiveData()
+        this.username = username
+        this.password = password
         isValidCredentials.value = validateCredentials(username, password)
         return isValidCredentials
     }
@@ -44,16 +52,17 @@ class LoginFragmentViewModel : ViewModel(){
         view.findNavController().navigate(R.id.action_loginFragment_to_createAccountFragment)
     }
 
-    fun signIn(auth : FirebaseAuth, activity: Activity): MutableLiveData<FirebaseUser>{
-        //TODO add pass and email
-        auth.signInWithEmailAndPassword("edgar.r.link@gmail.com", "12345678")
+    fun signIn(auth : FirebaseAuth, activity: Activity): MutableLiveData<Resource<FirebaseUser>>{
+        signIn = MutableLiveData()
+        signIn.value = Resource(Status.LOADING)
+        auth.signInWithEmailAndPassword(username, password)
             .addOnCompleteListener(activity){ task ->
                 if(task.isSuccessful){
-                    signIn.postValue(auth.currentUser)
-                    Log.e("Yeet", "Success")
+                    signIn.postValue(Resource(Status.SUCCESS, auth.currentUser))
+                    Log.e("SignIn", "Success")
                 } else {
-                    Log.e("Yeet", "Failure")
-                    signIn.postValue(null)
+                    Log.e("SignIn", "Failure")
+                    signIn.postValue(Resource(Status.ERROR))
                 }
 
             }

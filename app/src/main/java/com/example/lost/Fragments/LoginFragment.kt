@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.lost.R
+import com.example.lost.Resource
 import com.example.lost.viewModels.LoginFragmentViewModel
 import com.example.lost.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -32,26 +33,36 @@ class LoginFragment : Fragment(){
 
     private fun setUi(){
         binding.createAccountBt.setOnClickListener { viewModel.switchToCreateAccount(view!!)}
-        binding.signInBt.setOnClickListener{ onLoginClicked()}
+        binding.signInBt.setOnClickListener{ onLoginClicked() }
+        //TODO add forgot password logic
     }
 
     private fun onLoginClicked(){
-        viewModel.onLoginClicked( binding.usernameEt.text.toString(), binding.passwordEt.text.toString()).observe(viewLifecycleOwner, Observer {isValid ->
+        viewModel.onLoginClicked( binding.usernameEt.text.toString().trim(), binding.passwordEt.text.toString().trim())
+            .observe(viewLifecycleOwner, Observer {isValid ->
                 if(isValid) {
                     signIn()
                 } else {
-                    //TODO
                     Toast.makeText(context!!, "Invalid credentials", Toast.LENGTH_LONG).show()
                 }
             })
     }
 
     private fun signIn(){
-        viewModel.signIn( auth, activity!!).observe(viewLifecycleOwner, Observer { user ->
-            if(user != null){
-                viewModel.switchToHome(context!!)
-            }else {
-                Toast.makeText(context!!, "Error", Toast.LENGTH_LONG).show()
+        viewModel.signIn( auth, activity!!).observe(viewLifecycleOwner, Observer { response ->
+
+            when(response.status){
+                Resource.Status.ERROR -> {
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(context!!, "Error", Toast.LENGTH_LONG).show()
+                }
+                Resource.Status.LOADING -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+                Resource.Status.SUCCESS -> {
+                    binding.progressBar.visibility = View.GONE
+                    viewModel.switchToHome(context!!)
+                }
             }
         })
     }
